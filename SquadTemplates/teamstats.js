@@ -60,10 +60,10 @@ const data = allRows.map((row) => {
 });
 
 let gear = data.reduce((total, player) => {
-	if (!player.gearLevels) {
+	if (!player[0].gearLevels) {
 		return total;
 	}
-	var lowestGearLevel = Math.min(...player.gearLevels);
+	var lowestGearLevel = Math.min(...player[0].gearLevels);
 
 	if (!total[lowestGearLevel]) {
 		total[lowestGearLevel] = 0;
@@ -73,10 +73,10 @@ let gear = data.reduce((total, player) => {
 }, []); 
 
 let stars = data.reduce((total, player) => {
-	if (!player.stars) {
+	if (!player[0].stars) {
 		return total;
 	}
-	var lowestGearLevel = Math.min(...player.stars);
+	var lowestGearLevel = Math.min(...player[0].stars);
 
 	if (!total[lowestGearLevel]) {
 		total[lowestGearLevel] = 0;
@@ -86,8 +86,8 @@ let stars = data.reduce((total, player) => {
 }, []); 
 
 let zetas = data.reduce((total, player) => {
-	if (!player.zetas) return total;
-	const playerZetas = player.zetas.reduce((a,b) => a + b);
+	if (!player[0].zetas) return total;
+	const playerZetas = player[0].zetas.reduce((a,b) => a + b);
 	if (!total[playerZetas]) {
 		total[playerZetas] = 0;
 	}
@@ -96,8 +96,8 @@ let zetas = data.reduce((total, player) => {
 },{});
 
 let powerLevel = data.reduce((total, player) => {
-	if (!player.powerLevel || player.powerLevel <= 0) return total;
-	let nearest10k = parseInt(player.powerLevel / 10000) * 10000;
+	if (!player[0].powerLevel || player[0].powerLevel <= 0) return total;
+	let nearest10k = parseInt(player[0].powerLevel / 10000) * 10000;
 	if (!total[nearest10k]) {
 		total[nearest10k] = 0;
 	}
