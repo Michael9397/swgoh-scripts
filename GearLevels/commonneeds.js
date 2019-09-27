@@ -62,7 +62,7 @@ let consoleTitleLineStyling = 'background: #f3f6fb; color: #253e64;font-weight: 
 console.log("%cGear For " + toon + " By Level\t\t", consoleTitleLineStyling);
 for (let i = 13;i >= 0;i--) {
   if (data[i]) {
-  		console.log('%cGear ' + i + " pieces\tName")
+  		console.log('%cGear ' + i + " pieces\tName", consoleStyling)
   	for (let index in data[i]) {
   		console.log('%c\t' +  data[i][index] + "\t\t\t\t" + index + "\t\t\t\t", consoleStyling);
   	}
