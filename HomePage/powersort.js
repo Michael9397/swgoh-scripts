@@ -25,7 +25,7 @@ let list = Array.from(document.querySelectorAll('li .character')).map(toon => { 
 
 let consoleStyling = 'background: #f3f6fb; color: #253e64; font-size: 18px;'
 let consoleTitleLineStyling = 'background: #f3f6fb; color: #253e64;font-weight: 800;font-size: 18px;'
-console.log("%Sorted Speed\t\t\t\t", consoleTitleLineStyling);
+console.log("%Sorted Power\t\t\t\t", consoleTitleLineStyling);
 console.log('%c\tPower\tName\t\t\t\t', consoleStyling);
 for (let index in list) {
   console.log('%c\t' +  list[index][1] + "\t\t" + list[index][0] + "\t\t\t\t", consoleStyling);
